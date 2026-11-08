@@ -94,17 +94,36 @@ function enc(text, mode) {
     console.log('UI 主题键不存在，已新建 → ' + UI_THEME_LIGHT);
   }
 
-  // 4) 回读校验
-  console.log('\n—— 回读校验 ——');
-  const back = JSON.parse(dec(await db.get(cssKey)));
-  console.log('缓存 CSS 长度 :', back.css.length, back.css.includes('--wb-home-bg-video') ? '✓ 含视频规则' : '⚠ 不含视频规则');
-  for (const s of snaps) {
-    if (s.name === SNAP_PREFIX + '__identity') continue;
-    const o = JSON.parse(dec(await db.get(s.key)));
-    console.log('快照', s.name, '→ zipUrl', o.zipUrl === BAD_ZIP ? '✓ 已改不可信' : o.zipUrl);
-  }
-  console.log('UI 主题 =', dec(await db.get(uiEntry ? uiEntry.key : Buffer.concat([KEY_PREFIX, Buffer.from(UI_THEME_KEY, 'latin1')]))));
-
+  // 4) 回读校验 —— 等 db 完全落盘后重开一次，模拟应用下次启动的真实读取路径
   await db.close();
-  console.log('\n完成。启动 WorkBuddy，视频壁纸应该直接生效。');
+  const db2 = new ClassicLevel(DB, { keyEncoding: 'buffer', valueEncoding: 'buffer' });
+  await db2.open();
+  console.log('\n—— 回读校验（重扫整库） ——');
+  let seenCss = null, seenSnaps = 0, seenUi = null;
+  for await (const [k, v] of db2.iterator()) {
+    const name = Buffer.from(k).toString('latin1').replace(/^_file:\/\/\u0000\u0001/, '');
+    if (name === CSS_KEY) {
+      try { seenCss = JSON.parse(dec(Buffer.from(v))); } catch { seenCss = null; }
+    } else if (name === UI_THEME_KEY) {
+      try { seenUi = dec(Buffer.from(v)); } catch { seenUi = null; }
+    } else if (name === SNAP_BASE || (name.startsWith(SNAP_PREFIX) && name !== SNAP_PREFIX + '__identity')) {
+      try {
+        const o = JSON.parse(dec(Buffer.from(v)));
+        if (o.zipUrl === BAD_ZIP) seenSnaps += 1;
+        else console.log('⚠ 快照仍是原值:', name.slice(-24), '→', String(o.zipUrl).slice(0, 60));
+      } catch { console.log('⚠ 快照解析失败:', name.slice(-24)); }
+    }
+  }
+  await db2.close();
+  console.log(seenCss
+    ? `CSS 缓存 ✓ ${seenCss.css.length} 字符${seenCss.css.includes('--wb-home-bg-video') ? '，含视频规则' : '，⚠ 不含视频规则'}`
+    : '⚠ CSS 缓存回读失败 —— 这次写入没有生效，别启动应用，把上面输出发给阿岚');
+  console.log(seenSnaps > 0 ? `快照 zipUrl ✓ ${seenSnaps} 处已断开` : '⚠ 没有任何快照被断开');
+  console.log(seenUi && seenUi.includes('"light"') ? 'UI 主题 ✓ light' : '⚠ UI 主题未写成 light');
+
+  const allOk = seenCss && seenSnaps > 0 && seenUi && seenUi.includes('"light"');
+  if (!allOk) process.exitCode = 2;
+  console.log(allOk
+    ? '\n完成。启动 WorkBuddy，视频壁纸应该直接生效。'
+    : '\n有未通过的检查项（见上），启动前先解决。');
 })().catch((e) => { console.error('失败:', e && e.message); process.exit(1); });
