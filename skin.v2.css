@@ -1405,7 +1405,7 @@ body {
    ═══════════════════════════════════════════════════════════════════════════ */
 :root body,
 :root .claw-workspace {
-  background-color: #eef2f9 !important;
+  background-color: transparent !important;
   background-image: url("local-file://local/C%3A/Users/Administrator/.workbuddy/appearance-resources/theme-tkbera-1789703092000/workbuddy-skin-green/assets/custom/home-bg-poster.jpg") !important;
   background-size: cover !important;
   background-position: center !important;
@@ -1510,4 +1510,51 @@ body {
 :root .wb-home-composer .quick-actions__item:hover {
   background: rgb(255 255 255 / 92%) !important;
   background-color: rgb(255 255 255 / 92%) !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   全屏壁纸·第三轮（2026-11-08 23:40）—— 借官方机制，一次到位
+   ---------------------------------------------------------------------------
+   根因（这轮才挖到）：官方布局壳
+     .teams-container                     ← background-color:--wb-home-bg-primary
+       ├─ [data-view-id=sidebar]          ← background:--wb-home-bg-primary
+       └─ [data-view-id=main-content]     ← background:--wb-home-bg-secondary
+   皮肤 token 块把两个变量钉成 #f5f6f8 实色 → 整个壳不透明，
+   body/.claw-workspace 上铺的壁纸全部被挡。之前每轮只是清了外围，壳还在。
+   官方 .teams-container 本来就有壁纸口子 --wb-home-bg-image（cover + center-bottom），
+   现在直接用官方机制铺图，壳透明后壁纸自然全屏，不留空隙。
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root,
+body {
+  --wb-home-bg-primary: transparent !important;
+  --wb-home-bg-secondary: transparent !important;
+}
+
+:root .teams-container,
+body .teams-container {
+  background-color: transparent !important;
+  --wb-welcome-bg-image: url("local-file://local/C%3A/Users/Administrator/.workbuddy/appearance-resources/theme-tkbera-1789703092000/workbuddy-skin-green/assets/custom/home-bg-poster.jpg") !important;
+}
+
+/* 壳透明后，这两处旧 token 兜底色也不能再垫（免得又从缝里漏白） */
+:root .teams-container,
+body .teams-container,
+:root .teams-container.is-mac,
+body .teams-container.is-mac {
+  --wb-home-bg-primary: transparent !important;
+  --wb-home-bg-secondary: transparent !important;
+}
+
+/* [data-view-id=sidebar] 壳透明（16% 白纱的 .conversation-list 在它里面） */
+:root .teams-container [data-view-id="sidebar"] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* 主区壳同透明 */
+:root .teams-container [data-view-id="main-content"],
+body .teams-container [data-view-id="main-content"] {
+  background: transparent !important;
+  background-color: transparent !important;
 }
