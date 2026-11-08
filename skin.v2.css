@@ -1,0 +1,1470 @@
+/* WB Imported Skin (yuniang / 鱼娘 · 宝蓝水彩)
+   来源：DeepSeek Harness 皮肤中心 https://hnnulwh.cn  皮肤 id skin-a58358545cb1021a「鱼娘」
+        下载量 3561，全站第一（第二名 515）。作者 cai123-hub。
+   做法：继承「森林绿」这份已验证骨架，不做结构改动，只重映射配色——
+        绿色族色相 133° -> 225.5°（鱼娘原图实测主色相），保持 S / L / alpha 不动，
+        彩度 >= 0.28 的重音色再乘 1.38 增益，贴近原画的鲜亮感。
+        层级 / hover / 渐变 / 半透明关系 1:1 继承，对比度不被破坏。
+   新配色：
+     brand primary/accent : #2d479b   （原画 wordmark #293d7e 与主蓝 #5773ba 之间）
+     brand deep           : #25366d / #212a47
+     page bg              : #f5f6f8   bg secondary : #e8eaf0   border : #dcdfe7
+     text base            : #0e152a   （原 #12261a 的宝蓝化）
+   语义色（成功绿 #0cbf5b、危险红、警告橙、青）与真中性色原样保留，不参与色相旋转。
+   底图 yuniang-home.png 已抹去原图 "beauticode" 字样块，仅保留右侧角色带。
+*/
+
+:root,
+body,
+body.light,
+.light,
+.cb-light,
+.light .cbChat,
+.cb-light .cbChat,
+.cbChat.light,
+:root.light,
+body[data-vscode-theme-name="IDE Light"] {
+  --cb-bg-primary: #f5f6f8 !important;
+  --cb-bg-secondary: #e8eaf0 !important;
+  --cb-bg-tertiary: #f5f6f8 !important;
+  --cb-content-background: #e8eaf0 !important;
+  --cb-vscode-input-background: #e8eaf0 !important;
+  --cb-main-area-background: #ffffff !important;
+  --cb-colleagues-remote-chip-bg: #e8eaf0 !important;
+  --cb-colleagues-remote-chip-border: #d4d8e3 !important;
+  --cb-colleagues-remote-chip-fg: #0e152ae6 !important;
+  --cb-user-bubble-bg: #e8eaf0 !important;
+  --cb-user-bubble-color: #0e152ae6 !important;
+  --cb-markdown-table-border-color: #0e152a14 !important;
+  --cb-markdown-table-cell-bg: #ffffff !important;
+  --cb-markdown-table-header-bg: #e8eaf0 !important;
+  --cb-markdown-code-block-bg: #e8eaf0 !important;
+  --cb-markdown-code-block-border: #dcdfe7 !important;
+  --cb-markdown-code-block-header-bg: #e8eaf0 !important;
+  --cb-markdown-border-color: #dcdfe7 !important;
+  --cb-text-primary: #0e152ae6 !important;
+  --cb-text-secondary: #0e152ab3 !important;
+  --cb-text-link: #2d479b !important;
+  --cb-button-primary: #2d479b !important;
+  --cb-button-primary-foreground: #ffffff !important;
+  --cb-main-area-border-color: #dcdfe7 !important;
+  --cb-main-area-box-shadow: 0px 12px 24px -8px #00000005, 0px 2px 4px -4px #00000005 !important;
+  --cb-skeleton-base: #3049981a !important;
+  --cb-skeleton-highlight: #30499833 !important;
+  --cb-stroke-secondary: #dcdfe7 !important;
+  --cb-panel-bg-primary: #ffffff !important;
+  --cb-colleague-card-chat-bg: #070606 !important;
+  --cb-vscode-list-hoverBackground: #e8eaf0 !important;
+  --cb-vscode-descriptionForeground: #0e152ab3 !important;
+  --cb-popover-border: #dcdfe7 !important;
+  --cb-dropdown-bg-color: #ffffff !important;
+  --cb-input-border-color: #dcdfe7 !important;
+  --cb-vscode-panel-border: #dcdfe7 !important;
+  --cb-shadow-popover: 0 12px 24px -8px #0e152a0f, 0 2px 4px -4px #0e152a14 !important;
+  --vscode-editor-background: #ffffff !important;
+  --vscode-editor-foreground: #0e152ae6 !important;
+  --vscode-input-background: #e8eaf0 !important;
+  --vscode-input-border: #dcdfe7 !important;
+  --vscode-button-background: #0f2b82 !important;
+  --vscode-button-foreground: #ffffff !important;
+  --vscode-textLink-foreground: #0f2b82 !important;
+  --vscode-widget-border: #dcdfe7 !important;
+  --wb-accent-blue: #2d479b !important;
+  --wb-accent-blue-soft: #4b65b814 !important;
+  --wb-accent-cyan: #0035da !important;
+  --wb-accent-cyan-soft: #0035da0f !important;
+  --wb-accent-link-soft: #1c368924 !important;
+  --wb-accent-link-soft-hover: #314a981f !important;
+  --wb-accent-orange: #f5a623 !important;
+  --wb-accent-orange-soft: #f5a62314 !important;
+  --wb-accent-pink: #294395 !important;
+  --wb-accent-purple: #3d57ab !important;
+  --wb-accent-purple-light: #c3c8d7 !important;
+  --wb-accent-purple-soft: #4059a814 !important;
+  --wb-accent-teal: #0f2b82 !important;
+  --wb-accent-unread: #0f2b82 !important;
+  --wb-accent-violet: #617ac9 !important;
+  --wb-accent-violet-soft: #6179c60f !important;
+  --wb-activity-blue-10: #416bf01a !important;
+  --wb-activity-blue-15: #416bf026 !important;
+  --wb-activity-card-action-fg: #ffffffe6 !important;
+  --wb-activity-card-border: #0e152a0d !important;
+  --wb-activity-card-close-default: #56524d59 !important;
+  --wb-activity-card-close-hover: #56524da6 !important;
+  --wb-activity-card-dark-bg: #061440 !important;
+  --wb-activity-green-15: #22c55e26 !important;
+  --wb-activity-green-20: #22c55e33 !important;
+  --wb-activity-green-25: #22c55e40 !important;
+  --wb-activity-green-40: #22c55e66 !important;
+  --wb-alert-error-text: #dc2626 !important;
+  --wb-alert-info-bg: #ffffff !important;
+  --wb-alert-info-text: #2655ea !important;
+  --wb-alert-success-bg: #d1fae5 !important;
+  --wb-alert-success-text: #047857 !important;
+  --wb-alert-warning-bg: #fef3c7 !important;
+  --wb-alert-warning-text: #d97706 !important;
+  --wb-apps-toggle-color: #18181b40 !important;
+  --wb-apps-toggle-color-hover: #18181b73 !important;
+  --wb-apps-toggle-line-dark: #f8f8f814 !important;
+  --wb-apps-toggle-line-dark-hover: #f8f8f826 !important;
+  --wb-avatar-bg: #0e2c8b !important;
+  --wb-avatar-bg-accent: #8a96bd !important;
+  --wb-avatar-bg-fallback-2: #718de4 !important;
+  --wb-avatar-bg-fallback-6: #0031cc !important;
+  --wb-badge-doc: #4285f4 !important;
+  --wb-badge-gold: #d4a017 !important;
+  --wb-badge-gold-bg: #f0c040 !important;
+  --wb-badge-gold-fg: #856404 !important;
+  --wb-badge-img: #f9ab00 !important;
+  --wb-badge-pending-bg: #081849 !important;
+  --wb-badge-pending-fg: #ffffff !important;
+  --wb-badge-sheet: #1e45be !important;
+  --wb-badge-success-bg: #3e8a4f22 !important;
+  --wb-badge-success-fg: #088f50 !important;
+  --wb-badge-warning-bg: #050505 !important;
+  --wb-badge-warning-fg: #ff7800 !important;
+  --wb-bg-action: #2d479b !important;
+  --wb-bg-active: #edeef2 !important;
+  --wb-bg-badge-on-image: #0000003d !important;
+  --wb-bg-badge-on-image-active: #0000007a !important;
+  --wb-bg-badge-on-image-hover: #0000005c !important;
+  --wb-bg-blue-soft: #3f59ad0a !important;
+  --wb-bg-card: #ffffff !important;
+  --wb-bg-card-action: #304998e6 !important;
+  --wb-bg-card-hover: #ecedf2 !important;
+  --wb-bg-card-strong: #e8eaf0 !important;
+  --wb-bg-connector-figma: #d19147 !important;
+  --wb-bg-connector-github: #31a354 !important;
+  --wb-bg-connector-gmail: #cb904d !important;
+  --wb-bg-connector-google-docs: #80766b !important;
+  --wb-bg-connector-google-drive: #f3b434 !important;
+  --wb-bg-connector-google-sheets: #d8a56a !important;
+  --wb-bg-connector-linear: #dbad79 !important;
+  --wb-bg-connector-notion: #deb382 !important;
+  --wb-bg-connector-slack: #f97316 !important;
+  --wb-bg-content: #f5f6f8 !important;
+  --wb-bg-elevated: #2d479b !important;
+  --wb-bg-error-hover: #ea43351f !important;
+  --wb-bg-error-hover-dark: #ef53501a !important;
+  --wb-bg-error-soft: #faf8f6 !important;
+  --wb-bg-error-subtle: #faf8f6 !important;
+  --wb-bg-error-vivid-soft: #dc26261a !important;
+  --wb-bg-error-vivid-subtle: #dc262614 !important;
+  --wb-bg-favorite-soft: #0c2d9514 !important;
+  --wb-bg-focus-soft: #1c36891a !important;
+  --wb-bg-gold-end: #8f6e30 !important;
+  --wb-bg-gold-start: #c2a979 !important;
+  --wb-bg-green-soft: #34a85314 !important;
+  --wb-bg-hover: #d8dbe4 !important;
+  --wb-bg-hover-light: #dbdee8 !important;
+  --artifact-tab-active-bg: #edeef2 !important;
+  --wb-bg-info: #ffffff !important;
+  --wb-bg-input-inset: #0e152a00 !important;
+  --wb-bg-inset-strong: #ecedf2 !important;
+  --wb-bg-inverse: #2d479b !important;
+  --wb-bg-item-selected: #e8eaf0 !important;
+  --wb-bg-modal: #ffffff !important;
+  --wb-bg-overlay: #0e152a66 !important;
+  --wb-bg-overlay-dropzone: #051137b3 !important;
+  --wb-bg-overlay-elevated: #091848c7 !important;
+  --wb-bg-overlay-on-dark: #f7f8f90d !important;
+  --wb-bg-pill-active: #2d479b !important;
+  --wb-bg-pill-active-hover: #768bcb !important;
+  --wb-bg-pill-hover: #cbd4ee !important;
+  --wb-bg-popover: #ffffff !important;
+  --wb-bg-primary: #ffffff !important;
+  --wb-bg-row-selected: #b9bfd3 !important;
+  --wb-bg-scrim-light: #f7f8f9cc !important;
+  --wb-bg-secondary: #f5f6f8 !important;
+  --wb-bg-skeleton: #3049981a !important;
+  --wb-bg-skeleton-highlight: #30499833 !important;
+  --wb-bg-slate: #0e2c8b !important;
+  --wb-bg-success-soft: #f4efe9 !important;
+  --wb-bg-success-soft-dark: #4caf5026 !important;
+  --wb-bg-success-vivid-soft: #16a34a1a !important;
+  --wb-bg-surface-overlay-soft: #0e152a0a !important;
+  --wb-bg-surface-overlay-strong: #0e152a14 !important;
+  --wb-bg-tab-active: #2d479b !important;
+  --wb-bg-tertiary: #e7ebf6 !important;
+  --wb-bg-tooltip: #0e152ae6 !important;
+  --wb-bg-warning-soft-strong: #f59e0b29 !important;
+  --wb-bg-warning-subtle: #f7f3ee !important;
+  --wb-bg-warning-vivid-soft: #ca8a041a !important;
+  --wb-border-action: #19358c !important;
+  --wb-border-card: #0e152a14 !important;
+  --wb-border-control: #d4d8e3 !important;
+  --wb-border-default: #0e152a14 !important;
+  --wb-border-drag-indicator: #0f2b82 !important;
+  --wb-border-error: #fecdca !important;
+  --wb-border-error-subtle: #fecdca !important;
+  --wb-border-error-vivid-subtle: #dc262633 !important;
+  --wb-border-faint: #0e152a1a !important;
+  --wb-border-focus: #0e152abf !important;
+  --wb-border-hover: #0e152a29 !important;
+  --wb-border-info: #c5cadb !important;
+  --wb-border-input: #a7b3db !important;
+  --wb-border-mask: #0e152a1a !important;
+  --wb-border-popover: #0e152a0f !important;
+  --wb-border-popover-strong: #0e152a3d !important;
+  --wb-border-strong: #cdd2e0 !important;
+  --wb-border-subtle: #dcdfe7 !important;
+  --wb-border-subtle-soft: #e2e6f3 !important;
+  --wb-border-teams: #2e489b !important;
+  --wb-border-tooltip: #b6bdd4 !important;
+  --wb-border-warning: #ffe1a8 !important;
+  --wb-border-warning-subtle: #ffe1a8 !important;
+  --wb-border-weak: #0e152a0a !important;
+  --wb-brand-accent: #2d479b !important;
+  --wb-brand-accent-bg: #f4f5f7 !important;
+  --wb-brand-bright: #2d479b !important;
+  --wb-brand-primary: #2d479b !important;
+  --wb-brand-primary-deep: #172f7b !important;
+  --wb-brand-primary-subtle: #122c7f1f !important;
+  --wb-brand-soft: #7e90c7 !important;
+  --wb-brand-wechat-green: #0bc160 !important;
+  --wb-brand-wechat-green-connected: #07c160 !important;
+  --wb-brand-wechat-green-hover: #07a152 !important;
+  --wb-button-cancel-bg: #d4d8e3 !important;
+  --wb-button-confirm-bg: #0e152ae6 !important;
+  --wb-button-danger-bg: #e85c5c !important;
+  --wb-button-danger-bg-active: #ec7474 !important;
+  --wb-button-danger-bg-disabled: #f5b9b9 !important;
+  --wb-button-danger-bg-hover: #ec7474 !important;
+  --wb-button-danger-bg-soft-active: #f6404129 !important;
+  --wb-button-danger-bg-soft-hover: #f6404114 !important;
+  --wb-button-danger-border: #f64041 !important;
+  --wb-button-danger-border-disabled: #f5b9b9 !important;
+  --wb-button-danger-fg: #f64041 !important;
+  --wb-button-danger-fg-disabled: #f5b9b9 !important;
+  --wb-button-danger-fg-on-solid: #ffffff !important;
+  --wb-button-danger-fg-on-solid-disabled: #ffffff !important;
+  --wb-button-ghost-bg: #0e152a00 !important;
+  --wb-button-ghost-bg-active: #b9bfd3 !important;
+  --wb-button-ghost-bg-hover: #d5d9e5 !important;
+  --wb-button-ghost-fg: #0e152ae6 !important;
+  --wb-button-ghost-fg-active: #312e2b !important;
+  --wb-button-ghost-fg-disabled: #0e152a4d !important;
+  --wb-button-ghost-fg-hover: #312e2b !important;
+  --wb-button-grey-bg: #f0f1f5 !important;
+  --wb-button-grey-bg-active: #b9bfd3 !important;
+  --wb-button-grey-bg-disabled: #f4f5f7 !important;
+  --wb-button-grey-bg-hover: #e8eaf0 !important;
+  --wb-button-grey-fg: #0e152ae6 !important;
+  --wb-button-grey-fg-disabled: #0e152a4d !important;
+  --wb-button-inverse-bg-active: #22409d !important;
+  --wb-button-inverse-bg-hover: #768bcb !important;
+  --wb-button-inverse-fg-disabled: #f7f8f999 !important;
+  --wb-button-link-bg: #0e152a00 !important;
+  --wb-button-link-bg-active: #0e152a00 !important;
+  --wb-button-link-bg-disabled: #0e152a00 !important;
+  --wb-button-link-bg-hover: #0e152a00 !important;
+  --wb-button-link-fg: #172f7b !important;
+  --wb-button-link-fg-disabled: #506bbf !important;
+  --wb-button-link-fg-hover: #312e2b !important;
+  --wb-button-loading-danger-fg: #f5b9b9 !important;
+  --wb-button-loading-danger-fg-on-solid: #ffffff !important;
+  --wb-button-loading-ghost-fg: #0e152a !important;
+  --wb-button-loading-grey-fg: #0e152a !important;
+  --wb-button-loading-link-fg: #172f7b !important;
+  --wb-button-loading-primary-fg: #f7f8f9 !important;
+  --wb-button-loading-secondary-fg: #0e152a !important;
+  --wb-button-login-bg: #2d479b !important;
+  --wb-button-login-bg-active: #22409d !important;
+  --wb-button-login-bg-hover: #768bcb !important;
+  --wb-button-primary-bg: #304998e6 !important;
+  --wb-button-primary-bg-active: #213a88e6 !important;
+  --wb-button-primary-bg-disabled: #30499833 !important;
+  --wb-button-primary-bg-hover: #25419ae6 !important;
+  --wb-button-primary-fg: #f7f8f9 !important;
+  --wb-button-primary-fg-disabled: #f7f8f9 !important;
+  --wb-button-secondary-bg: #ffffff !important;
+  --wb-button-secondary-bg-active: #cacfde !important;
+  --wb-button-secondary-bg-disabled: #ebecf1 !important;
+  --wb-button-secondary-bg-hover: #ced2e0 !important;
+  --wb-button-secondary-fg: #0e152ae6 !important;
+  --wb-button-secondary-fg-disabled: #0e152a4d !important;
+  --wb-button-secondary-fg-hover: #312e2b !important;
+  --wb-button-secondary-fg-hover-inverse: #e7e9ef !important;
+  --wb-button-secondaryfill-bg-hover: #ced2e0 !important;
+  --wb-button-soft-bg: #0e152a14 !important;
+  --wb-button-soft-bg-hover: #3049981f !important;
+  --wb-button-success-bg: #0cbf5b !important;
+  --wb-button-success-bg-hover: #09a84f !important;
+  --wb-card-selected-bg: #b9bfd3 !important;
+  --wb-card-selected-border: #d0d4e1 !important;
+  --wb-check-checkmark: #f7f8f9 !important;
+  --wb-checkbox-bg-default: #0e152a00 !important;
+  --wb-checkbox-bg-selected: #0e152abf !important;
+  --wb-checkbox-border-default: #0e152a33 !important;
+  --wb-checkbox-border-hover: #0e152a80 !important;
+  --wb-checkbox-border-selected: #0e152abf !important;
+  --wb-checkbox-icon-selected: #f7f7f7 !important;
+  --wb-claw-text-dingtalk: #0f2b82 !important;
+  --wb-claw-text-feishu: #081849 !important;
+  --wb-claw-text-link: #1d398f !important;
+  --wb-claw-text-link-hover: #0f2b82 !important;
+  --wb-claw-text-qq: #7b1fa2 !important;
+  --wb-claw-text-wechat: #2e7d32 !important;
+  --wb-claw-text-wecom: #0f2b82 !important;
+  --wb-claw-text-yuanbao: #0f32a0 !important;
+  --wb-code-border-input: #a7b5e033 !important;
+  --wb-code-syntax-error: #cf222e !important;
+  --wb-code-syntax-function: #3d57ab !important;
+  --wb-code-syntax-keyword: #8d5d26 !important;
+  --wb-code-syntax-number: #953800 !important;
+  --wb-code-syntax-string: #081849 !important;
+  --wb-color-accent-brand: #2d479b !important;
+  --wb-color-bg-card-default: #d4d8e3 !important;
+  --wb-color-bg-card-hover: #e8eaf0 !important;
+  --wb-color-bg-input: #0e152a0a !important;
+  --wb-color-bg-modal: #ffffff !important;
+  --wb-color-bg-primary-active: #9aa9d9 !important;
+  --wb-color-bg-primary-default: #d5d9e5 !important;
+  --wb-color-bg-primary-hover: #cbd0de !important;
+  --wb-color-bg-primary-hover-strong: #d8dbe4 !important;
+  --wb-color-bg-secondary-default: #ffffff !important;
+  --wb-color-bg-secondary-hover-active: #e8eaf0 !important;
+  --wb-color-border-focus: #0e152abf !important;
+  --wb-color-border-primary: #c4cadb !important;
+  --wb-color-border-secondary: #d4d8e3 !important;
+  --wb-color-border-solid: #c4cadb !important;
+  --wb-color-border-tertiary: #dcdfe7 !important;
+  --wb-color-mask-color: #0e152a99 !important;
+  --wb-color-mask-strong: #0e152acc !important;
+  --wb-color-text-brand-active: #1e388b !important;
+  --wb-color-text-brand-default: #2d479b !important;
+  --wb-color-text-brand-disabled: #8c9ccd !important;
+  --wb-color-text-brand-focus: #2d479b !important;
+  --wb-color-text-brand-hover: #22409d !important;
+  --wb-color-text-disabled: #0e152a4d !important;
+  --wb-color-text-error-active: #b42c3f !important;
+  --wb-color-text-error-default: #f64041 !important;
+  --wb-color-text-error-disabled: #f5b9b9 !important;
+  --wb-color-text-error-focus: #ef8b8b !important;
+  --wb-color-text-error-hover: #e85c5c !important;
+  --wb-color-text-hint: #0e152a4d !important;
+  --wb-color-text-link-default: #172f7b !important;
+  --wb-color-text-link-hover: #0f329f !important;
+  --wb-color-text-on-scrim-light: #0e152a6b !important;
+  --wb-color-text-placeholder: #1d398f !important;
+  --wb-color-text-primary: #0e152ae6 !important;
+  --wb-color-text-secondary: #0e152ab3 !important;
+  --wb-color-text-solid: rgba(0, 0, 0, 0.9) !important;
+  --wb-color-text-success-active: #088f50 !important;
+  --wb-color-text-success-default: #3c8c4e !important;
+  --wb-color-text-success-disabled: #a3e7c2 !important;
+  --wb-color-text-success-focus: #66d799 !important;
+  --wb-color-text-success-hover: #29c770 !important;
+  --wb-color-text-tertiary: #0e152a80 !important;
+  --wb-color-text-warning-default: #ff7800 !important;
+  --wb-color-text-warning-hover: #ff8420 !important;
+  --wb-connector-amber: #1f3b91 !important;
+  --wb-connector-amber-bg: #e7ebf6 !important;
+  --wb-connector-blue: #2e489b !important;
+  --wb-connector-blue-bg: #ecedf2 !important;
+  --wb-connector-green: #31a354 !important;
+  --wb-connector-green-bg: #ecf2ec !important;
+  --wb-connector-orange: #f97316 !important;
+  --wb-connector-orange-bg: #f7f3ee !important;
+  --wb-connector-purple: #617ac9 !important;
+  --wb-connector-purple-bg: #f0f1f5 !important;
+  --wb-connector-red: #2d7f3f !important;
+  --wb-connector-red-bg: #f4f8f4 !important;
+  --wb-connector-sky: #0e2c8b !important;
+  --wb-connector-sky-bg: #eaecf1 !important;
+  --wb-connector-slate: #0e2c8b !important;
+  --wb-connector-slate-bg: #e7e9ef !important;
+  --wb-control-checkbox-selected-bg: #0e152ae6 !important;
+  --wb-control-checkbox-selected-fg: #f7f8f9 !important;
+  --wb-control-selected-bg: #8596cd !important;
+  --wb-control-selected-bg-hover: #b9bfd3 !important;
+  --wb-control-selected-fg: #f7f8f9 !important;
+  --wb-discover-text-expert: #3d57ab !important;
+  --wb-dropdown-bg-color: #ffffff !important;
+  --wb-dropdown-border-color: #0e152a14 !important;
+  --wb-error: #f64041 !important;
+  --wb-error-foreground: #f64041 !important;
+  --wb-favorite-bg-soft: #0c2d950f !important;
+  --wb-home-bg-primary: #f5f6f8 !important;
+  --wb-home-bg-secondary: #f5f6f8 !important;
+  --wb-home-composer-arrow-fg: #312e2b !important;
+  --wb-home-composer-card-bg: #e5e7ed !important;
+  --wb-home-composer-chip-bg-hover: #d5d9e5 !important;
+  --wb-icon-default: #312e2b !important;
+  --wb-icon-folder: #312e2b !important;
+  --wb-icon-muted: #97928c !important;
+  --wb-icon-primary: #312e2b !important;
+  --wb-icon-secondary: #56524d !important;
+  --wb-icon-tertiary: #78736d !important;
+  --wb-info: #0f2b82 !important;
+  --wb-menu-item-danger-fg: #f14c4c !important;
+  --wb-modal-scrollbar-thumb: #0e152a1a !important;
+  --wb-mode-btn-active-bg: #2d479b !important;
+  --wb-mode-btn-active-fg: #f7f8f9 !important;
+  --wb-mode-btn-hover-bg: #768bcb !important;
+  --wb-mode-btn-text: #0f2b82 !important;
+  --wb-mode-selector-label: #263f8d !important;
+  --wb-mode-switch-bg: #e8eaf0 !important;
+  --wb-mode-tag-fg: #f7f8f9 !important;
+  --wb-modify-marker-bg: #0c2d9526 !important;
+  --wb-netdrive-border: #e7d7c5 !important;
+  --wb-netdrive-error-fg: #cf222e !important;
+  --wb-netdrive-text-disabled: #231b1199 !important;
+  --wb-netdrive-text-primary: #4b351b !important;
+  --wb-netdrive-text-secondary: #a06a2c !important;
+  --wb-onboarding-arrow-active: #19358c !important;
+  --wb-onboarding-arrow-default: #8a96bd !important;
+  --wb-onboarding-arrow-fade: #99acea !important;
+  --wb-onboarding-brand-bg-blue: #eaecf1 !important;
+  --wb-onboarding-brand-bg-green: #eaf4eb !important;
+  --wb-palette-black-10: #0e152a1a !important;
+  --wb-palette-black-100: #0e152a !important;
+  --wb-palette-black-20: #0e152a33 !important;
+  --wb-palette-black-30: #0e152a4d !important;
+  --wb-palette-black-40: #0e152a66 !important;
+  --wb-palette-black-50: #0e152a80 !important;
+  --wb-palette-black-60: #0e152a99 !important;
+  --wb-palette-black-70: #0e152ab3 !important;
+  --wb-palette-black-75: #0e152abf !important;
+  --wb-palette-black-90: #0e152ae6 !important;
+  --wb-palette-blue-1: #ebecf1 !important;
+  --wb-palette-blue-10: #122767 !important;
+  --wb-palette-blue-2: #cfd6eb !important;
+  --wb-palette-blue-3: #adbbe5 !important;
+  --wb-palette-blue-4: #7892e5 !important;
+  --wb-palette-blue-5: #4864bb !important;
+  --wb-palette-blue-6: #3c58b0 !important;
+  --wb-palette-blue-7: #2f4fb4 !important;
+  --wb-palette-blue-8: #2655ea !important;
+  --wb-palette-blue-9: #133dc2 !important;
+  --wb-palette-brand-1: #e1e5f2 !important;
+  --wb-palette-brand-10: #001761 !important;
+  --wb-palette-brand-2: #c6cfec !important;
+  --wb-palette-brand-3: #a8b6e2 !important;
+  --wb-palette-brand-4: #7e97e6 !important;
+  --wb-palette-brand-5: #5c7ce0 !important;
+  --wb-palette-brand-7: #2656eb !important;
+  --wb-palette-brand-8: #002fc2 !important;
+  --wb-palette-brand-9: #002392 !important;
+  --wb-palette-cyan-1: #f1f2f6 !important;
+  --wb-palette-cyan-2: #9cade4 !important;
+  --wb-palette-cyan-3: #5a7ff4 !important;
+  --wb-palette-cyan-4: #114bff !important;
+  --wb-palette-cyan-5: #0035da !important;
+  --wb-palette-cyan-6: #0031cc !important;
+  --wb-palette-cyan-7: #001d79 !important;
+  --wb-palette-gray-1: #f2f3f6 !important;
+  --wb-palette-gray-2: #ebecf1 !important;
+  --wb-palette-gray-3: #dcdfe7 !important;
+  --wb-palette-gray-4: #d4d8e3 !important;
+  --wb-palette-gray-5: #cdd2e0 !important;
+  --wb-palette-gray-6: #c4cadb !important;
+  --wb-palette-green-1: #e7f8f0 !important;
+  --wb-palette-green-2: #c2efd6 !important;
+  --wb-palette-green-3: #a3e7c2 !important;
+  --wb-palette-green-4: #85dfad !important;
+  --wb-palette-green-5: #66d799 !important;
+  --wb-palette-green-6: #47cf84 !important;
+  --wb-palette-green-7: #29c770 !important;
+  --wb-palette-green-8: #0cbf5b !important;
+  --wb-palette-green-9: #088f50 !important;
+  --wb-palette-orange-1: #ffeddf !important;
+  --wb-palette-orange-10: #800f00 !important;
+  --wb-palette-orange-2: #ffdcbf !important;
+  --wb-palette-orange-3: #ffca9f !important;
+  --wb-palette-orange-4: #ffb980 !important;
+  --wb-palette-orange-5: #ffa760 !important;
+  --wb-palette-orange-6: #ff9540 !important;
+  --wb-palette-orange-7: #ff8420 !important;
+  --wb-palette-orange-8: #ff7800 !important;
+  --wb-palette-orange-9: #c04100 !important;
+  --wb-palette-purple-1: #f4f5f7 !important;
+  --wb-palette-purple-10: #4864bb !important;
+  --wb-palette-purple-2: #f2f3f6 !important;
+  --wb-palette-purple-3: #dde0e9 !important;
+  --wb-palette-purple-4: #c3c8d7 !important;
+  --wb-palette-purple-5: #b1b7cb !important;
+  --wb-palette-purple-6: #617ac9 !important;
+  --wb-palette-purple-7: #617ac9 !important;
+  --wb-palette-purple-8: #3d57ab !important;
+  --wb-palette-purple-9: #3d57ab !important;
+  --wb-palette-red-1: #fce8e8 !important;
+  --wb-palette-red-10: #821238 !important;
+  --wb-palette-red-2: #f9d1d1 !important;
+  --wb-palette-red-3: #f5b9b9 !important;
+  --wb-palette-red-4: #f2a2a2 !important;
+  --wb-palette-red-5: #ef8b8b !important;
+  --wb-palette-red-6: #ec7474 !important;
+  --wb-palette-red-7: #e85c5c !important;
+  --wb-palette-red-8: #f64041 !important;
+  --wb-palette-red-9: #b42c3f !important;
+  --wb-palette-white-10: #f7f8f91a !important;
+  --wb-palette-white-100: #f7f8f9 !important;
+  --wb-palette-white-20: #f7f8f933 !important;
+  --wb-palette-white-30: #f7f8f94d !important;
+  --wb-palette-white-40: #f7f8f966 !important;
+  --wb-palette-white-50: #f7f8f980 !important;
+  --wb-palette-white-60: #f7f8f999 !important;
+  --wb-palette-white-70: #f7f8f9b3 !important;
+  --wb-palette-white-75: #f7f8f9bf !important;
+  --wb-palette-white-80: #f7f8f9cc !important;
+  --wb-palette-white-90: #f7f8f9e6 !important;
+  --wb-question-floating-card-border: #0e152a14 !important;
+  --wb-question-floating-number-active-bg: #e0e3e8 !important;
+  --wb-question-floating-number-bg: #dcdfe7 !important;
+  --wb-quick-action-arrow-bg: #e8eaf0 !important;
+  --wb-quick-action-item-bg-hover: #e8eaf0 !important;
+  --wb-quick-action-item-border-hover: #d5d9e5 !important;
+  --wb-quick-action-selected-bg: #2d479b !important;
+  --wb-quick-action-selected-fg: #f7f8f9 !important;
+  --wb-quick-action-sub-item-bg: #e8eaf0 !important;
+  --wb-quick-action-sub-item-hover-bg: #c1cbea0f !important;
+  --wb-quick-actions-fade-bg: transparent !important;
+  --wb-scene-tag-bg: #2d479b !important;
+  --wb-scene-tag-bg-hover: #768bcb !important;
+  --wb-scene-tag-fg: #f7f8f9 !important;
+  --wb-scene-tag-grey-bg: #0e152a1a !important;
+  --wb-scene-tag-grey-bg-hover: #768bcb !important;
+  --wb-scene-tag-grey-fg: #0e152ae6 !important;
+  --wb-scrollbar-thumb: #0e152a33 !important;
+  --wb-scrollbar-thumb-bg: #0e152a1f !important;
+  --wb-scrollbar-thumb-hover: #0e152a4d !important;
+  --wb-sidebar-bg: #e3e5ec !important;
+  --wb-status-error: #f64041 !important;
+  --wb-status-error-soft: #fce8e8 !important;
+  --wb-status-error-soft-bg: #ff4d4f1a !important;
+  --wb-status-error-vivid: #dc2626 !important;
+  --wb-status-info: #996529 !important;
+  --wb-status-info-blue: #ddb07d !important;
+  --wb-status-info-blue-soft-bg: #6789f314 !important;
+  --wb-status-neutral: #2e489b !important;
+  --wb-status-neutral-soft-bg: #314a981f !important;
+  --wb-status-success: #0cbf5b !important;
+  --wb-status-success-muted: #10b981 !important;
+  --wb-status-success-soft-bg: #10b9811a !important;
+  --wb-status-success-vivid: #16a34a !important;
+  --wb-status-warning: #ff7800 !important;
+  --wb-status-warning-muted: #f59e0b !important;
+  --wb-status-warning-soft: #ffeddf !important;
+  --wb-status-warning-soft-bg: #f59e0b1a !important;
+  --wb-status-warning-vivid: #ca8a04 !important;
+  --wb-success: #0cbf5b !important;
+  --wb-switcher-bg: #0e152a0f !important;
+  --wb-switcher-text: #0e152ab3 !important;
+  --wb-switcher-text-active: #0e152ae0 !important;
+  --wb-switcher-text-hover: #0e152ad9 !important;
+  --wb-switcher-thumb-bg: #ffffff !important;
+  --wb-tab-active-border: #f0f1f5 !important;
+  --wb-tab-active-fg: #19358c !important;
+  --wb-tag-operational-text: #081849 !important;
+  --wb-text-action: #19358c !important;
+  --wb-text-author: #80766b !important;
+  --wb-text-connector: #f7f8f9 !important;
+  --wb-text-danger: #dc2626 !important;
+  --wb-text-disable: #0e152a4d !important;
+  --wb-text-faded: #0e152a59 !important;
+  --wb-text-inverse: #f7f8f9 !important;
+  --wb-text-link: #0f2b82 !important;
+  --wb-text-link-default: #3d57ab !important;
+  --wb-text-medium: #0e152ab3 !important;
+  --wb-text-muted: #0e152a4d !important;
+  --wb-text-on-inverse: #f7f8f9 !important;
+  --wb-text-on-primary: #f7f8f9 !important;
+  --wb-text-placeholder-soft: #0e152a4d !important;
+  --wb-text-strong: #0e152ae6 !important;
+  --wb-text-weak: #0e152a80 !important;
+  --wb-text-white: #f7f8f9 !important;
+  --wb-todo-menu-bg-active: #c3c9dc !important;
+  --wb-todo-menu-bg-hover: #d5d9e5 !important;
+  --wb-todo-menu-icon-default: #312e2b !important;
+  --wb-todo-menu-text-heading: #0e152a4d !important;
+  --wb-todo-menu-text-view-more: #0e152a80 !important;
+  --wb-voice-input-btn-primary-bg: #0f2b82 !important;
+  --wb-voice-input-btn-primary-fg: #f7f8f9 !important;
+  --wb-voice-input-card-border: #b6bdd4 !important;
+  --wb-voice-input-confirm: #0f2b82 !important;
+  --wb-voice-input-guide-link: #0f2b82 !important;
+  --wb-voice-input-pill-bg: #e8eaf0 !important;
+  --wb-voice-input-text-secondary: #0f2b82 !important;
+  --wb-warning: #ff7800 !important;
+  --wb-warning-soft: #ffeddf !important;
+  --wb-bg-input-slot-gradient: #d5d9e5 !important;
+  --wb-main-area-background: #ffffff !important;
+  --wb-main-area-border-color: #dcdfe7 !important;
+  --wb-main-area-box-shadow: 0px 12px 24px -8px #00000005, 0px 2px 4px -4px #00000005 !important;
+  --cb-dropdown-item-hover-bg-color: #dde0e8 !important;
+  --cb-dropdown-item-selected-bg-color: #dbdee8 !important;
+  --wb-dropdown-item-bg-hover: #dde0e8 !important;
+  --wb-dropdown-item-bg-selected: #dbdee8 !important;
+  --cb-list-item-selected-bg: #edeef2 !important;
+  --ic-option-selected-bg: #dbdee8 !important;
+  --wb-control-checkbox-selected-bg: #2d479b !important;
+  --wb-select-border-color: #c4cadb !important;
+  --wb-input-border-color: #c4cadb !important;
+  --wb-button-danger-border: #f6404177 !important;
+  --cb-question-floating-icon-active-bg: #2d479b !important;
+  --wb-todo-menu-text-default: rgba(0, 0, 0, 0.9) !important;
+  --wb-modal-panel-bg: #ffffff !important;
+  --wb-checkbox-color-bg-checked: #304998e6 !important;
+  --wb-checkbox-color-border-checked: #304998e6 !important;
+}
+
+[class*=detail-sidebar__header-slot] {
+  --cb-dropdown-item-selected-bg-color: #dbdee8 !important;
+}
+
+[class*=mainArea] [class*=list] [class*=item][class*=selected] {
+  --cb-list-item-selected-bg: #edeef2 !important;
+}
+
+.notifications-panel {
+  background: #f5f6f8 !important;
+}
+
+
+[class*=modelItem]:hover:not([class*=disabled]) {
+  background: #dde0e8 !important;
+}
+
+
+/* Targeted gaps: composer mainArea and quick actions */
+
+.wb-home-composer__input-slot,
+.wb-home-composer__input-slot [class*="mainArea"] {
+  --cb-main-area-background: #ffffff !important;
+  --wb-main-area-background: #ffffff !important;
+  background: #ffffff !important;
+}
+
+
+.wb-home-composer .quick-actions__item {
+  background: #ffffff !important;
+}
+
+
+.wb-home-composer .quick-actions__item:hover {
+  background: #e8eaf0 !important;
+}
+
+
+.wb-home-composer .quick-actions__item.quick-actions__item--selected {
+  background: #2d479b !important;
+  color: #f7f8f9 !important;
+}
+
+
+
+/* claw-sidebar-drawer 背景：源码读 --wb-color-bg-secondary-hover-active（被多处复用，
+   不能直接改 token），此处直接覆盖 background 属性。 */
+
+.claw-sidebar-drawer {
+  background: #ffffff !important;
+}
+
+
+/* scene-tag 背景：源码 cb-bridge.scss:183 把 --cb-scene-tag-bg 设成
+   var(--wb-palette-brand-2)（青绿），与棕色皮肤不搭。这里覆盖成
+   --wb-palette-gray-5（light=#cdd2e0 / dark=#081849），与整体米棕色调一致。 */
+
+.wb-home-composer__input-slot {
+  --cb-scene-tag-bg: var(--wb-bg-pill-active) !important;
+  --cb-scene-tag-fg: var(--wb-text-white);
+}
+
+.phrase-content-wrapper {
+  --cb-scene-tag-bg: var(--wb-bg-pill-active) !important;
+  --cb-scene-tag-fg: var(--wb-text-white);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Welcome 首页整体背景图（口子机制）
+   ─────────────────────────────────────────────────────────────────────
+   使用方式：
+   1. 把图片放到 apps/workbuddy-desktop/renderer-public/assets/welcome-bg/
+      - 文件名约定：bg-light.png
+      - 支持 png / jpg / webp / gif（动图）等浏览器原生支持的格式
+   2. 默认 --wb-welcome-bg-image 为 none（不渲染背景图，维持现状）
+   3. 启用：取消下面 var(--wb-welcome-bg-image, none) 的注释，或把它改成
+      url("local-file://local/C%3A/Users/Administrator/.workbuddy/appearance-resources/theme-tkbera-1789703092000/workbuddy-skin-green/assets/welcome-bg/bg-light.png")
+   4. 关闭：改回 none 或删除整段规则
+   作用范围：.welcome 容器（首页/对话区统一底色层），不影响 sidebar/modal
+   ───────────────────────────────────────────────────────────────────── */
+
+:root,
+body {
+  --wb-welcome-bg-image: none !important;
+}
+
+
+:root .teams-container,
+body .teams-container {
+  background-image: var(--wb-welcome-bg-image, none) !important;
+  background-size: cover !important;
+  background-position: center bottom !important;
+  background-repeat: no-repeat !important;
+}
+
+/* 页面级布局容器底色。.teams-container 自身读 --wb-home-bg-primary，
+   main-content / welcome 等页面容器读 --wb-home-bg-secondary（见 App.less、
+   main-content-core.less、welcome/styles.scss）。这里提权到 (0,2,0) 是因为
+   SCSS bundle 在 skin.css 之后加载，同 :root 特异性下会盖掉皮肤值。 */
+
+:root .teams-container,
+body .teams-container,
+:root .teams-container.is-mac,
+body .teams-container.is-mac {
+  --wb-home-bg-primary: #f5f6f8 !important;
+  --wb-home-bg-secondary: #f5f6f8 !important;
+}
+
+:root .wb-icon--spin {
+  color: #2d479b !important;
+}
+
+:root .teams-container .colleague-chat-page *,
+body .teams-container .colleague-chat-page * {
+  --wb-colleague-chat-bg: transparent !important;
+  --wb-colleague-chat-surface: transparent !important;
+}
+
+
+/* 面板级容器透明：--wb-bg-content 被 tencent-docs-panel / my-files-panel /
+   ima-library-view / tencent-lexiang-panel 等面板容器用作 background，
+   设成 transparent 让底图透过这些面板。该 token 不被卡片/按钮等 UI 元素使用。 */
+:root .teams-container,
+body .teams-container {
+  --wb-bg-content: transparent !important;
+}
+
+/* --wb-accent-unread 覆盖：colors.component.scss:49 把它重定义为
+   var(--wb-palette-brand-8)（#002fc2 绿色），编译后的 SCSS bundle 在
+   skin.css <link> 之后加载，同 :root 特异性 + !important 下后者优先，
+   导致 skin.css 的 #0f2b82 被覆盖成绿色。用 .teams-container 作用域
+   提升特异性 (0,2,0) > (0,1,0)，确保棕色生效。 */
+:root .teams-container,
+body .teams-container {
+  --wb-accent-unread: #0f2b82 !important;
+}
+
+/* task-filter-menu 勾选图标：源码 conversation-list/index.tsx 的 CheckIcon 把
+   fill="#002fc2" 硬编码在 SVG path 上（presentation attribute），不读 CSS color
+   变量，改 --wb-accent-unread token 无效。用 CSS fill 属性覆盖（优先级高于
+   presentation attribute），让勾选颜色跟随主题。 */
+.task-filter-menu__option-check path {
+  fill: var(--wb-accent-unread) !important;
+}
+
+.tencent-docs-search-bar {
+  --wb-bg-input-inset: #e8eaf0 !important;
+}
+
+.dc-search-input {
+  --wb-bg-secondary: #e8eaf0 !important;
+}
+
+.my-files-search {
+  --wb-bg-primary: #e8eaf0 !important;
+}
+
+.my-files-filter-btn {
+  --wb-button-secondary-bg: #f0f1f5 !important;
+}
+
+.atm-custom-select-trigger {
+  --wb-text-inverse: #ffffff !important;
+}
+
+.connector-selector-field__trigger.wb-button.wb-button--ghost {
+  --wb-bg-modal: #ffffff !important;
+}
+
+/* widgetRendererWrapper 局部声明覆盖：cb-bridge.scss:561 在 [class*="widgetRendererWrapper"]
+   元素自身声明了 --cb-colleague-card-chat-bg: var(--wb-bg-secondary)，局部声明（即使无 !important）
+   优先于从 :root 继承的 !important 值（!important 标记不通过继承传递）。
+   用 .teams-container 作用域提升特异性 (0,3,0) > (0,1,0) 让 skin.css 值生效。 */
+:root .teams-container [class*="widgetRendererWrapper"],
+body .teams-container [class*="widgetRendererWrapper"] {
+  --cb-colleague-card-chat-bg: #e8eaf0 !important;
+}
+
+.claw-assistant-list-item--active,
+.claw-assistant-list-item--active:hover {
+  --wb-bg-active: #d0d4e1 !important
+}
+
+/* ec-card-summon-btn 渐变覆盖：源码 center.less:1319 用相同选择器声明了
+   linear-gradient + color-mix，SCSS bundle 在 skin.css <link> 之后加载，
+   同特异性下后者胜出。用 .teams-container 作用域提升特异性让 skin.css 值生效。 */
+:root .teams-container .ec-expert-card:hover .ec-card-summon-btn--top::before,
+:root .teams-container .ec-expert-card:focus-within .ec-card-summon-btn--top::before {
+  background: linear-gradient(to right, transparent, var(--wb-bg-card-hover));
+}
+
+:root .teams-container .ec-card-summon-btn--top::before {
+  background: linear-gradient(to right, transparent, var(--wb-bg-card));
+}
+
+/* lexiang skeleton 裸色覆盖：源码 library-iframe-view.less:145 硬编码了
+   linear-gradient(90deg, #ececec, #f6f6f6, #ececec)，不读 token。
+   用已有的 --cb-skeleton-base / --cb-skeleton-highlight token 替换，
+   让骨架屏渐变跟随皮肤色调。 */
+:root .teams-container .lexiang-library-iframe-view__skeleton-bar {
+  background: linear-gradient(90deg, var(--cb-skeleton-base) 0%, var(--cb-skeleton-highlight) 50%, var(--cb-skeleton-base) 100%) !important;
+}
+
+/* ─── skin-dev custom layer─── */
+:root [class*="topRightSlotStandalone"] img:not(:has(~ video)),
+:root .wb-home-route__growth-buddy img:not(:has(~ video)) {
+  --wb-custom-img-img: url("local-file://local/C%3A/Users/Administrator/.workbuddy/appearance-resources/theme-tkbera-1789703092000/workbuddy-skin-green/assets/custom/yuniang-mark.png") !important;
+  content: var(--wb-custom-img-img) !important;
+}
+
+:root .wb-home-route__growth-buddy img:not(:has(~ video)) {
+  opacity: 1 !important;
+}
+
+/* 放开成长伙伴视频：原 display:none 是早期「装饰图换静态图」留下的覆盖。
+   上方三条替换规则已改为「该 img 后面没有同级 video 时才生效」，若这里继续
+   隐藏 video，就会出现图不替换、视频也不显示、槽位整块空掉的情况，故停用。
+   注意：本条只针对成长伙伴槽位，不影响首页底图视频 --wb-home-bg-video。
+:root .wb-home-route__growth-buddy video {
+  display: none !important;
+}
+*/
+
+:root .workbuddy-topbar--scrolled {
+  background: rgb(246 248 245 / 100%) !important;
+}
+
+:root .claw-agent-chat-topbar {
+  background: rgb(250 252 250 / 100%) !important;
+}
+
+:root .colleague-chat-cb-chat {
+  background: rgb(246 248 245 / 100%) !important;
+}
+
+:root .collapsible-section-header {
+  background: rgb(227 236 228 / 100%) !important;
+}
+
+:root .conversation-section-cloud-tasks .conversation-section-label-tasks {
+  background: rgb(227 236 228 / 100%) !important;
+}
+
+:root .conversation-list-topbar {
+  background: rgb(227 236 228 / 100%) !important;
+}
+
+:root .conversation-list-footer {
+  background: rgb(227 236 228 / 100%) !important;
+}
+
+:root .conversation-list-header {
+  background: rgb(227 236 228 / 100%) !important;
+}
+
+:root .conversation-list-content {
+  background: rgb(227 236 228 / 100%) !important;
+}
+
+:root .claw-sidebar-drawer--pinned {
+  background: rgb(246 249 246 / 100%) !important;
+}
+
+:root [class*="hasMaxContentWidth"] {
+  background: rgb(246 248 245 / 100%) !important;
+}
+
+/* ─── skin-dev custom layer─── */
+:root [class*="fileTag"] {
+  background: rgb(213 229 214 / 100%) !important;
+}
+
+/* 对话中行内代码(inline code)背景：灰色 → 主题色系淡蓝 */
+:root [class*="cbChat"] code:not([class]),
+:root [class*="cbChat"] p>code,
+:root [class*="cbChat"] li>code,
+:root [class*="cbChat"] td>code,
+:root [class*="message"] code:not([class]),
+:root [class*="message"] p>code,
+:root [class*="message"] li>code {
+  background: #e8eaf0 !important;
+  background-color: #e8eaf0 !important;
+}
+
+/* 发送按钮 hover 去除变色（未输入和已输入状态都不变色） */
+:root .wb-home-composer .wb-button--ghost:hover,
+:root .colleague-chat-page .wb-button--ghost:hover,
+:root [class*="chatInput"] .wb-button--ghost:hover,
+:root [class*="inputArea"] .wb-button--ghost:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+:root .wb-home-composer .wb-button--inverse:hover,
+:root .wb-home-composer .wb-button--login:hover,
+:root .colleague-chat-page .wb-button--inverse:hover,
+:root .colleague-chat-page .wb-button--login:hover,
+:root [class*="chatInput"] .wb-button--inverse:hover,
+:root [class*="chatInput"] .wb-button--login:hover,
+:root [class*="inputArea"] .wb-button--inverse:hover,
+:root [class*="inputArea"] .wb-button--login:hover {
+  background: #2d479b !important;
+  background-color: #2d479b !important;
+}
+
+/* 编辑气泡：发送按钮背景→品牌色，文字→白色 */
+:root [class*="editAction"] .wb-button--primary,
+:root [class*="editAction"] .wb-button--inverse,
+:root [class*="editAction"] .wb-button--login,
+:root [class*="messageEdit"] .wb-button--primary,
+:root [class*="messageEdit"] .wb-button--inverse,
+:root [class*="messageEdit"] .wb-button--login {
+  background: #2d479b !important;
+  background-color: #2d479b !important;
+  color: #ffffff !important;
+  border-color: #2d479b !important;
+}
+
+/* 编辑气泡：取消按钮描边→品牌色，文字→品牌色 */
+:root [class*="editAction"] .wb-button--ghost,
+:root [class*="editAction"] .wb-button--secondary,
+:root [class*="messageEdit"] .wb-button--ghost,
+:root [class*="messageEdit"] .wb-button--secondary {
+  border-color: #2d479b !important;
+  color: #2d479b !important;
+  background: transparent !important;
+}
+
+/* ─── skin-dev custom layer─── */
+:root .main-content--welcome .chat-container--welcome [class*="hasMaxContentWidth"] {
+  background: transparent !important;
+}
+
+:root .teams-content-wrapper .teams-main-content .main-content--welcome {
+  --wb-custom-img-main-content-welcome: url("local-file://local/C%3A/Users/Administrator/.workbuddy/appearance-resources/theme-tkbera-1789703092000/workbuddy-skin-green/assets/custom/yuniang-home.png") !important;
+  background-image: var(--wb-custom-img-main-content-welcome) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+:root [class*="contentOverlayWrapper"] [class*="topRightSlotStandalone"] img:not(:has(~ video)) {
+  --wb-custom-img-img: url("local-file://local/C%3A/Users/Administrator/.workbuddy/appearance-resources/theme-tkbera-1789703092000/workbuddy-skin-green/assets/custom/yuniang-mark.png") !important;
+  content: var(--wb-custom-img-img) !important;
+}
+
+:root .automation-main-page .code-buddy-automation .atm-toolbar {
+  background: rgb(246 248 245 / 100%) !important;
+}
+
+:root .automation-main-page .code-buddy-automation .automation-workspace__content {
+  background: rgb(246 248 245 / 100%) !important;
+}
+
+:root .expert-center-light .ec-page-layout .ec-main-content {
+  background: rgb(246 248 245 / 100%) !important;
+}
+
+:root .teams-main-content .main-content--chat .workbuddy-topbar--mac {
+  background: rgb(246 248 245 / 100%) !important;
+}
+
+/* ─── conversation-render 会话 + 输入框 token（#72445 引擎默认开启后新增）───
+   ConversationEngine 去掉本地 dev 开关后默认走 conversation-render，会话气泡/代码块/
+   输入框改消费 --cr-*（light 默认是中性灰 + 薄荷绿 #002fc2），本皮肤原先只调过 --cb-*。
+   写在 .cr-theme 上：它与 .cr-input-box 是同一元素（input-box-root.tsx:31），
+   portal 出去的浮层也带该类，因此 alias 能就地解析到这里的值。
+   已在上方声明过的（brand-primary / bg-hover / chip-hover-bg / toggle-off-bg /
+   bg-input-slot-gradient / button-primary-bg）不重复，避免与既有形态打架。 */
+:root,
+.cr-theme {
+  /* 会话区：气泡、代码块、画布底色 */
+  --cr-user-bubble-bg: #e8eaf0 !important;
+  --cr-bg-canvas: #f5f6f8 !important;
+  /* 对话流底部遮罩：源码浅色默认 #ffffff，而画布是 #f5f6f8，本皮肤原先整条缺失，
+     导致输入框上方出现白色色带。此处补齐并与 --cr-bg-canvas 严格同值。
+     消费方 .cr-message-list__bottom-mask 走 linear-gradient(to bottom, transparent, var(...))。 */
+  --cr-message-list-bottom-mask-bg: #f5f6f8 !important;
+  --cr-bg-tertiary: #e7ebf6 !important;
+  --cr-bg-primary-default: #f0f1f5 !important;
+  --cr-bg-code: #e8eaf0 !important;
+  --cr-bg-code-header: #e8eaf0 !important;
+  --cr-bg-code-inline: #e8eaf0 !important;
+
+  /* 描边 / 浮层分隔 */
+  --cr-border-default: #dcdfe7 !important;
+  --cr-border-strong: #cdd2e0 !important;
+  --cr-border-elevated: #dcdfe7 !important;
+  --cr-popover-border: #dcdfe7 !important;
+  --cr-popover-divider: #dcdfe7 !important;
+
+  /* 链接与符号 chip */
+  --cr-text-link: #0f2b82 !important;
+  --cr-text-link-hover: #0f329f !important;
+  --cr-symbol-color: #0f2b82 !important;
+  --cr-symbol-background: #e8eaf0 !important;
+  --cr-symbol-hover-background: #dde0e8 !important;
+
+  /* 强调色：原 accent #2f4fb4 / focus #123cc2 / status-info #002fc2 都不在皮肤色系内 */
+  --cr-accent: #2d479b !important;
+  --cr-focus-border: #2d479b !important;
+  --cr-status-info: #0f2b82 !important;
+
+  --cr-avatar-fallback-bg: #dcdfe7 !important;
+  --cr-badge-bg: #e8eaf0 !important;
+
+  /* 输入框：内底、列表项态，与首页“+”菜单同值保持一致 */
+  --cr-bg-input-inset: #dbdee8 !important;
+  --cr-item-hover-bg: #dde0e8 !important;
+  --cr-item-selected-bg: #edeef2 !important;
+
+  /* 发送按钮三态（.cr-send-button）：可发送 / 停止（LLM 回复中）/ 禁用。
+     三个 token 各自可换；-disabled 不写则由 fill 自动派生 20%。 */
+  --cr-send-button-fill: #2d479b !important;
+  --cr-send-button-fill-stop: #2d479b !important;
+  --cr-send-button-fill-disabled: #30499833 !important;
+
+  /* 开关：开启态走 --cr-brand-primary（已在上方声明），关闭态走 --cr-toggle-off-bg */
+
+  /* mention / 技能 chip */
+  --cr-tag-bg: #d5d9e5 !important;
+  --cr-tag-skill-bg: #e8eaf0 !important;
+  --cr-tag-skill-bg-hover: #dde0e8 !important;
+  --cr-tag-skill-bg-active: #d5d9e5 !important;
+  --cr-tag-selected-bg: #dbdee8 !important;
+  --cr-tag-selected-text: #172f7b !important;
+
+  /* 场景胶囊：原薄荷绿 #c6cfec，与已覆盖的 --cb-scene-tag-bg 对齐 */
+  --cr-scene-tag-bg: #2d479b !important;
+  --cr-scene-tag-fg: #f7f8f9 !important;
+  --cr-scene-tag-bg-hover: #768bcb !important;
+  --cr-scene-tag-bg-active: #768bcb !important;
+
+  --cr-drop-zone-kbd-bg: #e8eaf0 !important;
+  --cr-drop-zone-kbd-border: #cdd2e0 !important;
+  --cb-icon-button-hover-background: #dde0e8 !important;
+  --cr-button-primary-bg: #304998e6 !important;
+  --cb-hover-bg: #dde0e8 !important;
+  --cb-input-hover-bg: #dde0e8 !important;
+  --cr-brand-primary: #2d479b !important;
+  --cr-toggle-off-bg: #cdd2e0 !important;
+  --cr-bg-input-slot-gradient: #e7ebf6 !important;
+  --cr-chip-hover-bg: #dde0e8 !important;
+  --cr-bg-hover: #dde0e8 !important;
+  --cr-bg-secondary: #e8eaf0 !important;
+  --wb-color-bg-primary-default: #e8eaf0 !important;
+}
+
+
+.cr-permission-confirm__btn-danger {
+  background: #2d479b !important;
+}
+
+/* conversation-input.less 的 stop-button 与 claw-local-empty 免责声明读这两个 cb token，
+   源码只在 cb-chat-ui :root.light 给了中性灰且无 !important，故此处 :root + important 可胜出。
+   它们的消费元素在 .cr-theme 外，不能挂在上面那个块里。 */
+:root,
+body {
+  --cb-panel-border-color: #dcdfe7 !important;
+  --cb-text-quaternary: #0e152a80 !important;
+}
+
+
+
+/* 首页底图选择器补齐：#72445（4d11d0ce062）让首页默认走新路由 modules/home 的
+   <main class="wb-home-route">，不再经过 MainContentCore，原 .main-content--welcome
+   规则已命不中任何元素。旧规则保留——引擎开关关闭 / claw 等场景仍走 MainContentCore。
+   复用同一个 placement 变量（同一张图），不新增变量名以免干扰 skin-dev 记账。 */
+:root .wb-home-route {
+  --wb-custom-img-main-content-welcome: url("local-file://local/C%3A/Users/Administrator/.workbuddy/appearance-resources/theme-tkbera-1789703092000/workbuddy-skin-green/assets/custom/yuniang-home.png") !important;
+  background-image: var(--wb-custom-img-main-content-welcome) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* topbar / body 透明，让底图透到整块首页（两者原本都是不透明 --wb-home-bg-secondary） */
+:root .wb-home-route>.workbuddy-topbar,
+:root .wb-home-route .wb-home-cloud-header {
+  background: transparent !important;
+}
+
+/* 制品卡片底色：源码 .artifact-slot-panel__card 从 #f2f2f2 迁到
+   var(--wb-bg-hover-light)（7210fe05011 #54178），该 token 同时被 hover 态等大量
+   组件共用，改 token 会连带污染；这里按元素直接写死皮肤蓝底。 */
+.artifact-slot-panel__card {
+  background: #e8eaf0 !important;
+
+}
+
+.artifact-slot-panel__card:hover {
+  background: #d8dbe4 !important;
+}
+
+[class*=questionFloating] {
+  --cb-question-floating-number-active-bg: #e8eaf0 !important;
+}
+
+.wb-home-route .wb-home-composer__input-slot {
+  background: transparent !important;
+}
+
+.claw-workspace__main {
+  background: #f5f6f8 !important;
+}
+
+
+
+/* ─── 首页快捷入口胶囊左右遮罩透明 ───────────────────────────────────────
+   浅色主题把渐变硬编码在伪元素上：
+   linear-gradient(270deg, #fff 50%, rgba(255,255,255,0) 99.99%)，
+   var(--wb-quick-actions-fade-bg) 只出现在 .vscode-dark / .vscode-high-contrast 分支，
+   因此单独把该变量改成 transparent 在浅色下不生效，必须直接覆盖伪元素，
+   且 background 与 background-image 都要写，避免 shorthand 未清掉渐变层。
+   二级快捷入口（sub-wrapper）基础规则本就读该变量，这里一并显式写透明以求确定性。 */
+:root .wb-home-composer .quick-actions--fade-right::after,
+:root .wb-home-composer .quick-actions--fade-left::before,
+:root .wb-home-composer .quick-actions-sub-wrapper--fade-right::after,
+:root .wb-home-composer .quick-actions-sub-wrapper--fade-left::before {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+
+/* ─── 首页「最佳实践案例 / 相关灵感」文字 1px 白色描边（可读性修正）─────────
+   问题：该模块的组件类名是 wb-related-playbooks（只在首页渲染，故可用裸类名），
+   浅色主题下把标题、卡片标题、换一批 / 查看更多、翻页、今日不再提示、关闭
+   全部硬编码成 rgba(0, 0, 0, 0.7)（翻页禁用态 0.26、分隔线 0.12），
+   反白版本只写在 .vscode-dark / .vscode-high-contrast 分支。
+   本皮肤把首页换成了彩色底图，这些深色文字直接压在树影 / 绿叶 / 撞色色块上，
+   实测「四六级备考台」这类标题几乎不可读。
+
+   做法：给文字加 1px 纯白描边与底图隔开，同时把字色从 70% 黑提到皮肤自身的
+   正文色，进一步拉开对比。
+
+   描边为什么用 8 向 1px text-shadow 而不是 -webkit-text-stroke：
+   text-stroke 的描边以字形轮廓为中线、内外各占一半，14px 中文笔画本身才 1.5px
+   左右，1px 白描边会吃掉大半笔画（实测直接糊成白色粗体）；虽然可以用
+   paint-order: stroke fill 把填充重新盖回字形上修正，但整条效果就吊在
+   paint-order 对 HTML 文字是否生效上，一旦失效是灾难性回退。
+   8 向投影不改字形、在任何引擎里都是确定行为，视觉上同样是干净的 1px 轮廓。
+   末尾那条 0 0 2px 的柔光只用来补满斜向缝隙，在白底区域完全不可见。
+
+   图标是 SVG，text-shadow 对其无效，改用链式 drop-shadow 做同样的 1px 白轮廓。
+
+   所有规则用 :root:not(.vscode-dark):not(.vscode-high-contrast) 限定，
+   特异性 (0,4,0) ~ (0,5,0) 高于源码的 (0,1,0) ~ (0,3,0)，
+   且深色主题下选择器直接不匹配，应用原生的白字方案不受影响。
+   ────────────────────────────────────────────────────────────────────── */
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__title,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__card-title,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__refresh,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__view-more,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__pager,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__dismiss-today,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__close {
+  color: #0e152ae6 !important;
+  text-shadow:
+    1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 1px 0 #ffffff, 0 -1px 0 #ffffff,
+    1px 1px 0 #ffffff, -1px 1px 0 #ffffff, 1px -1px 0 #ffffff, -1px -1px 0 #ffffff,
+    0 0 2px #ffffffcc !important;
+}
+
+/* SVG 图标（标题小图标、换一批的刷新圈、翻页箭头、关闭叉）的同款 1px 白轮廓。
+   链式 drop-shadow 会逐级作用在上一级的结果上，四向即可把斜角补满。 */
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__title-icon svg,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__refresh svg,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__view-more svg,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__pager svg,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__dismiss-today svg,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__close svg {
+  filter:
+    drop-shadow(1px 0 0 #ffffff) drop-shadow(-1px 0 0 #ffffff) drop-shadow(0 1px 0 #ffffff) drop-shadow(0 -1px 0 #ffffff) !important;
+}
+
+/* Hover / Active 底色：源码用 --wb-bg-tertiary / --wb-bg-secondary 这类不透明浅色，
+   压在彩色底图上是一块突兀的异色方片。换成半透明白，与白描边同一套语言，
+   在深色与浅色底图上都能读出「浮起来的胶囊」。 */
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__refresh:hover,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__view-more:hover,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__pager:hover,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__dismiss-today:hover,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__close:hover {
+  color: #0e152a !important;
+  background: #ffffffb8 !important;
+}
+
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__refresh:active,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__view-more:active,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__pager:active,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__dismiss-today:active {
+  background: #ffffffe6 !important;
+}
+
+/* 翻页禁用态：源码 rgba(0,0,0,.26) 压在彩色底图上等于消失，提到 45% 并保留描边。
+   本条必须排在上面的 :hover 之后 —— 两者特异性同为 (0,5,0)，靠书写顺序取胜，
+   否则禁用箭头 hover 时会错误地浮出白底胶囊。 */
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__pager--disabled,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__pager--disabled:hover,
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__pager--disabled:active {
+  color: #0e152a73 !important;
+  background: transparent !important;
+}
+
+/* 「今日不再提示」左侧那根 1px 竖分隔线，源码 rgba(0,0,0,.12) 在彩色底图上看不见。
+   加深到 30% 并在左右各补 1px 半透明白，与文字描边保持同一逻辑。 */
+:root:not(.vscode-dark):not(.vscode-high-contrast) .wb-related-playbooks__dismiss-today::before {
+  background: #0e152a4d !important;
+  box-shadow: 1px 0 0 #ffffffb3, -1px 0 0 #ffffffb3 !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   首页胶囊「透明门板」改造（SOP 6.4）：一级 + 二级
+   ---------------------------------------------------------------------------
+   问题：浅色主题把胶囊条边缘的渐变硬编码在伪元素上
+         linear-gradient(270deg, #fff 50%, rgba(255,255,255,0) 99.99%)
+         var(--wb-quick-actions-fade-bg) 只出现在 .vscode-dark 与
+         .vscode-high-contrast 分支，所以浅色下单改该变量 100% 不生效。
+         这层不透明白盖板压在深色/彩色底图上很脏，且容器 overflow: hidden
+         会把最边上那颗胶囊切成矩形硬边（圆角被切掉）。
+   做法：① 伪元素置透明（background 与 background-image 都写，避免
+            shorthand 未清掉渐变层）；
+         ② 给「滚动容器」加 mask-image 做 alpha 淡出 —— 内容滚到边缘淡成
+            透明、直接露出底图，这才是「透明门板」而非白盖板。
+   两级结构（类名易记错，已实测）：
+         容器      一级 .quick-actions            二级 .quick-actions-sub-wrapper
+         滚动容器  一级 .quick-actions__list      二级 .quick-actions-sub
+         边缘状态  一级 .quick-actions--fade-left/--fade-right
+                   二级 .quick-actions-sub-wrapper--fade-left/--fade-right
+   注：.quick-actions__scroll-container / __next / __prev 三个类名不存在，
+       手写稿常见但会让整段规则静默失效；实际箭头是 __arrow--left/--right。
+       边缘状态直接复用应用按 listCanScrollLeft/Right（二级
+       subScroll.canScrollLeft/Right）动态挂的 --fade-* 类，不用 :has() 推断。
+       箭头是容器的绝对定位子元素、与滚动容器同级，故不会被 mask 淡化，
+       始终清晰浮在淡出区上方，这正是期望效果。
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 兼容变量：深色主题分支与二级基础规则会读它，一并置透明 */
+:root {
+  --wb-quick-actions-fade-bg: transparent !important;
+}
+
+/* ① + ② 一级与二级的左右遮罩伪元素置透明 */
+:root .wb-home-composer .quick-actions--fade-right::after,
+:root .wb-home-composer .quick-actions--fade-left::before,
+:root .wb-home-composer .quick-actions-sub-wrapper--fade-right::after,
+:root .wb-home-composer .quick-actions-sub-wrapper--fade-left::before {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* ③ 一级四态 mask 变量：顺序 base -> right -> left -> 并写，最后一条特异性最高 */
+:root .wb-home-composer .quick-actions {
+  --quick-actions-mask: linear-gradient(90deg, #000 0%, #000 100%);
+}
+
+:root .wb-home-composer .quick-actions--fade-right {
+  --quick-actions-mask: linear-gradient(90deg, #000 0%, #000 90%, transparent 100%);
+}
+
+:root .wb-home-composer .quick-actions--fade-left {
+  --quick-actions-mask: linear-gradient(90deg, transparent 0%, #000 10%, #000 100%);
+}
+
+:root .wb-home-composer .quick-actions--fade-left.quick-actions--fade-right {
+  --quick-actions-mask: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
+
+/* ⑤-一级 滚动容器套 mask；遮罩作用于可视框而非滚动内容，淡出带固定在边缘 */
+:root .wb-home-composer .quick-actions__list {
+  -webkit-mask-image: var(--quick-actions-mask) !important;
+  mask-image: var(--quick-actions-mask) !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-size: 100% 100% !important;
+  mask-size: 100% 100% !important;
+}
+
+/* ④ 二级四态 mask 变量 */
+:root .wb-home-composer .quick-actions-sub-wrapper {
+  --quick-actions-sub-mask: linear-gradient(90deg, #000 0%, #000 100%);
+}
+
+:root .wb-home-composer .quick-actions-sub-wrapper--fade-right {
+  --quick-actions-sub-mask: linear-gradient(90deg, #000 0%, #000 90%, transparent 100%);
+}
+
+:root .wb-home-composer .quick-actions-sub-wrapper--fade-left {
+  --quick-actions-sub-mask: linear-gradient(90deg, transparent 0%, #000 10%, #000 100%);
+}
+
+:root .wb-home-composer .quick-actions-sub-wrapper--fade-left.quick-actions-sub-wrapper--fade-right {
+  --quick-actions-sub-mask: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
+
+/* ⑤-二级 滚动容器套 mask */
+:root .wb-home-composer .quick-actions-sub {
+  -webkit-mask-image: var(--quick-actions-sub-mask) !important;
+  mask-image: var(--quick-actions-sub-mask) !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-size: 100% 100% !important;
+  mask-size: 100% 100% !important;
+}
+
+/* 首页底部品牌文案：green 使用白字及指定外阴影。 */
+:root .wb-home-route::after {
+  content: 'Wind outside, light within.';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  z-index: 20;
+  pointer-events: none;
+  text-align: center;
+  font-size: 12px;
+  color: #ffffff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+:root:lang(zh) .wb-home-route::after {
+  content: '窗外有风，心里有光。';
+}
+
+:root:lang(zh-TW) .wb-home-route::after,
+:root:lang(zh-HK) .wb-home-route::after,
+:root:lang(zh-MO) .wb-home-route::after,
+:root:lang(zh-Hant) .wb-home-route::after {
+  content: '窗外有風，心裡有光。';
+}
+
+/* 侧栏 sticky 分组标题实底：源码走 var(--wb-sidebar-bg, …)，这里按容器作用域再钉一次，
+   并补上模板未覆盖的裸类名 .conversation-section-label（本地「任务」分组）。 */
+:root .conversation-list .conversation-section-label,
+:root .conversation-list-content .conversation-section-label,
+:root .conversation-list .collapsible-section>[class*="_header_"],
+:root .conversation-list-content .collapsible-section>[class*="_header_"] {
+  background: #e3e5ec !important;
+}
+
+:root .conversation-list .conversation-section-label:hover,
+:root .conversation-list-content .conversation-section-label:hover {
+  background: #d5d9e5 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   视频动效壁纸（2026-11-08 加）
+   ---------------------------------------------------------------------------
+   应用 5.9.3 原生支持：modules/home 的 <main class="wb-home-route"> 里挂了
+   HomeBgVideo 组件 —— 它读 **父元素**（即 .wb-home-route）上的
+   --wb-home-bg-video，正则 ^url\((['"]?)(.+?)\1\)$ 拆出地址，
+   且要求地址以 local-file:// 或 blob: 开头（isAllowedSrc），
+   然后渲染 <video class="wb-home-route__bg-video" autoplay loop muted playsinline>。
+   该元素自带 position:absolute; inset:0; width/height:100%; object-fit:cover; z-index:-1，
+   所以这里只负责给变量，不要自己造 video（纯 CSS 造不出来），也不要给 .wb-home-route 加
+   不透明背景盖住它 —— 底图规则留着当首帧解码前的兜底。
+
+   素材来源：桌面 video_dsh网页工作台动静态壁纸…_0.mp4（DSH 网页工作台演示录屏）。
+   原片是深色、且带别家 UI 与 "DeepSeek" 字样，直接铺会脏。处理成：
+     裁掉底部播放器条 → 16:9 裁切保住右侧人物 → gblur 柔化 → 左侧再叠一层
+     sigma=45 的强模糊（把残留字样化开）→ 叠 40% 白蒙版提亮 → 正放 6.8s 接倒放，
+     13.6s 无缝循环。结果 1280×720 / 404KB，浅色皮肤下压字不糊。
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root .wb-home-route {
+  --wb-home-bg-video: url("local-file://local/C%3A/Users/Administrator/.workbuddy/appearance-resources/theme-tkbera-1789703092000/workbuddy-skin-green/assets/custom/home-bg-loop.mp4") !important;
+  --wb-custom-img-main-content-welcome: url("local-file://local/C%3A/Users/Administrator/.workbuddy/appearance-resources/theme-tkbera-1789703092000/workbuddy-skin-green/assets/custom/home-bg-poster.jpg") !important;
+  background-image: var(--wb-custom-img-main-content-welcome) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* 视频在 z-index:-1 上，主体内容若带不透明底色会把动效挡住；首页壳层保持透明 */
+:root .wb-home-route > .wb-home-route__bg-video,
+:root .wb-home-route video.wb-home-route__bg-video {
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   侧栏玻璃化（2026-11-08 加）—— 把原来实底的薄荷绿侧栏放开，让壁纸透上来
+   ---------------------------------------------------------------------------
+   结构：.claw-workspace（外壳，原 background:var(--wb-bg-primary)）
+           ├─ .conversation-list      侧栏，原 background:var(--wb-sidebar-bg)
+           └─ .claw-workspace__main   主区（首页在这里面放 <video>）
+   做法：壁纸图铺在外壳上（.claw-workspace 的 background-image），侧栏改半透明，
+         于是侧栏区域直接透出同一张壁纸 —— 不依赖 body 有没有被别的层盖住，最稳。
+         侧栏只留一层 22% 白纱保证深色文字可读，所有子条（顶栏/header/content/footer/
+         分组标题）全部清成透明，避免多层叠加把壁纸洗白。
+   注意：侧栏区域是**静态帧**（poster），主区才是动图。视频只有 .wb-home-route 里那一个
+         <video>，它带 overflow:hidden 的父级，改 position 会把它顶到侧栏之上盖住文字，
+         所以不碰。静态帧与视频取自同一帧、同色调，接缝不明显。
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root body,
+:root .claw-workspace {
+  background-color: #eef2f9 !important;
+  background-image: url("local-file://local/C%3A/Users/Administrator/.workbuddy/appearance-resources/theme-tkbera-1789703092000/workbuddy-skin-green/assets/custom/home-bg-poster.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+:root .conversation-list {
+  background: rgb(255 255 255 / 22%) !important;
+  border-right: 1px solid rgb(255 255 255 / 55%) !important;
+}
+
+:root .conversation-list-topbar,
+:root .conversation-list-header,
+:root .conversation-list-content,
+:root .conversation-list-footer,
+:root .conversation-section-label,
+:root .conversation-section-cloud-tasks .conversation-section-label-tasks,
+:root .conversation-list .collapsible-section > [class*="_header_"],
+:root .conversation-list-content .collapsible-section > [class*="_header_"],
+:root .conversation-list .collapsible-section-header,
+:root .conversation-list-content .collapsible-section-header {
+  background: transparent !important;
+}
+
+:root .conversation-list-footer {
+  border-top: 1px solid rgb(255 255 255 / 55%) !important;
+}
+
+/* hover 才给一点底色，否则整块侧栏没有悬停反馈 */
+:root .conversation-section-label:hover,
+:root .conversation-list .collapsible-section > [class*="_header_"]:hover,
+:root .conversation-list-content .collapsible-section > [class*="_header_"]:hover,
+:root .conversation-list-footer:hover {
+  background: rgb(255 255 255 / 34%) !important;
+}
+
+/* 空间区那一块的下沿浮层（源码 background:var(--wb-sidebar-bg)）同样放开 */
+:root .conversation-space-section-overlay {
+  background: transparent !important;
+}
+
+/* ═══ 第二轮补漏（2026-11-08 17:00）═══
+   第一条漏了不带作用域的 .collapsible-section-header（皮肤里那 6 处薄荷绿 #e3ece4 之一）；
+   再把 --wb-sidebar-bg 在 .claw-workspace 子树里改成透明，任何读这个变量的侧栏容器都会跟着透；
+   .claw-sidebar-drawer(--pinned) 原来被钉成 #f6f9f6，一并放开。
+   白纱从 22% 降到 16%，让壁纸更清楚。 */
+:root .collapsible-section-header {
+  background: transparent !important;
+}
+
+:root .claw-workspace {
+  --wb-sidebar-bg: transparent !important;
+}
+
+:root .claw-sidebar-drawer,
+:root .claw-sidebar-drawer--pinned {
+  background: transparent !important;
+}
+
+:root .conversation-list {
+  background: rgb(255 255 255 / 16%) !important;
+}

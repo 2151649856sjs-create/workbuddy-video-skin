@@ -1,0 +1,22 @@
+# 素材与生成物不入库（第三方录屏 / 官方主题素材，版权原因）
+assets/
+*.mp4
+*.jpg
+*.jpeg
+*.png
+*.webp
+
+# 备份与本地残留
+*.bak
+*.bak-*
+*.orig
+*~
+
+# node 依赖
+node_modules/
+package-lock.json
+
+# 系统垃圾
+Thumbs.db
+desktop.ini
+.DS_Store
