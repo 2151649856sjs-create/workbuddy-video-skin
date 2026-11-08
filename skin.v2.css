@@ -1468,3 +1468,46 @@ body {
 :root .conversation-list {
   background: rgb(255 255 255 / 16%) !important;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   输入框面板透明化（2026-11-08 22:00 加）—— 修「底部白块」冲突
+   ---------------------------------------------------------------------------
+   冲突来源：旧规则「Targeted gaps: composer mainArea and quick actions」给
+   .wb-home-composer__input-slot 及其内部 [class*=mainArea] 写死了 #ffffff，
+   quick-actions__item 也是白底。前面那层壁纸规则盖不住它们（选择器更具体），
+   于是输入框面板整块发白。
+   做法：全部改回透明，输入框卡片本身有一层 --wb-bg-card 的毛玻璃由应用自绘，
+   我们只负责别再垫白。
+   ═══════════════════════════════════════════════════════════════════════════ */
+.wb-home-composer__input-slot,
+.wb-home-composer__input-slot [class*="mainArea"],
+.wb-home-route .wb-home-composer__input-slot [class*="mainArea"] {
+  --cb-main-area-background: transparent !important;
+  --wb-main-area-background: transparent !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+:root .wb-home-route .wb-home-composer,
+:root .wb-home-route .wb-home-composer__container {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* 输入框卡片本体：留一层浅色毛玻璃，保文字可读 */
+:root .wb-home-route .cr-input-box,
+:root .wb-home-route [class*="inputBox"] {
+  background: rgb(255 255 255 / 62%) !important;
+  background-color: rgb(255 255 255 / 62%) !important;
+}
+
+/* 快捷胶囊：白底改半透明 */
+:root .wb-home-composer .quick-actions__item {
+  background: rgb(255 255 255 / 72%) !important;
+  background-color: rgb(255 255 255 / 72%) !important;
+}
+
+:root .wb-home-composer .quick-actions__item:hover {
+  background: rgb(255 255 255 / 92%) !important;
+  background-color: rgb(255 255 255 / 92%) !important;
+}
