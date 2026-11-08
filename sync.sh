@@ -10,7 +10,7 @@ SKILL_SCRIPTS="${WB_SKILL_SCRIPTS:-$HOME/.workbuddy/skills/workbuddy-custom-skin
 [ -f "$THEME_DIR/skin.v2.css" ] || { echo "[sync] 找不到皮肤: $THEME_DIR/skin.v2.css"; exit 1; }
 
 cp -f "$THEME_DIR/skin.v2.css" "$REPO/skin.v2.css"
-for f in set_video_skin.js dump_ls.js; do
+for f in set_video_skin.js dump_ls.js inspect_skin.js; do
   [ -f "$SKILL_SCRIPTS/$f" ] && cp -f "$SKILL_SCRIPTS/$f" "$REPO/scripts/$f"
 done
 echo "[sync] 已收集皮肤与脚本"

@@ -34,6 +34,7 @@ WorkBuddy 的换肤面板只认服务端下发的主题包，没有本地导入�
 | `skin.v2.css` | 完整皮肤，直接替换到主题目录即可。末尾两段是本项目加的东西：视频壁纸变量、侧栏玻璃化 |
 | `scripts/set_video_skin.js` | 持久化补丁：把 CSS 写进 localStorage 缓存、把主题包 `zipUrl` 打成不可信域名（让启动时 CDN 那份加载失败、不覆盖自制皮肤）、`agent-ui-theme` 钉 light |
 | `scripts/dump_ls.js` | 只读排查用：dump 渲染进程 localStorage 里外观相关的键值 |
+| `scripts/inspect_skin.js` | 只读核对：当前缓存 CSS 长度、是否含视频/侧栏规则、快照 `zipUrl` 指向哪 |
 | `sync.sh` | 把本机最新皮肤与脚本收进仓库并推送 |
 
 ## 三、怎么用
