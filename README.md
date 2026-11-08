@@ -94,7 +94,20 @@ color=white:s=1280x720:d=7,format=rgba,colorchannelmixer=aa=0.40[w];\
 - 空间分组浮层 `.conversation-space-section-overlay`
 - 折叠抽屉 `.claw-sidebar-drawer(--pinned)`
 
-## 六、已知限制
+## 六、每次改动怎么同步
+
+仓库只保留**最新完整结果**：`sync.sh` 直接把本机正在用的 `skin.v2.css` 和两个脚本覆盖进仓库，
+不生成版本目录、不留备份文件，然后提交推送。素材按 `.gitignore` 挡在门外。
+
+```bash
+bash sync.sh
+```
+
+本机 `~/.gitconfig` 把 `github.com` 全量重写到只读镜像，直接 push 会失败；
+脚本会自动套一份临时全局配置绕开重写、同时保留 GCM 凭据。
+
+## 七、已知限制
+
 
 - 服务端更新主题 `updatedAt` → 新目录 + 新缓存键，自制内容失效，要重做一次路径替换
 - 在设置里切皮肤会把持久化补丁冲掉
